@@ -42,3 +42,19 @@ files as the `test-results` artifact, including when tests fail.
 
 The Jenkinsfile uses `sh` on Linux and `bat` on Windows. A repository file
 alone does not create the Jenkins job or the GitHub webhook.
+
+## Verified exam run on 24 October 2026
+
+The solution passed all 9 supplied tests: 4 unit tests and 5 integration
+tests. The Release build completed with zero errors and 32 existing warnings.
+GitHub Actions completed successfully on both configured branch patterns:
+
+- [develop run](https://github.com/BojidarDermendjiev/SEDO-09-2026-Regular-Exam-2/actions/runs/40070140468)
+- [feature/ci-pipelines run](https://github.com/BojidarDermendjiev/SEDO-09-2026-Regular-Exam-2/actions/runs/40070137661)
+
+A local Jenkins Pipeline job named `SEDO-Exam-2` is configured to track main.
+Build 3 restored, built, passed all 9 tests, and archived both TRX reports.
+It was started manually after publishing the pipeline. The SCM poll schedule
+is configured separately to detect future main pushes while Jenkins runs.
+The controller listens on localhost, so its build URL is accessible only on
+the machine running Jenkins.
